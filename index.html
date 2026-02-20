@@ -39,17 +39,30 @@
             background-color: var(--primary-color);
             color: white;
             padding: 40px;
+            text-align: center; /* Centers the photo and header text */
         }
 
-        header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
-        header h2 { margin-top: 5px; font-weight: 300; color: var(--accent-color); font-size: 1.2rem; }
+        /* Added Styling for your Glider Photo */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-        .contact-info { margin-top: 30px; }
+        header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1.1; }
+        header h2 { margin-top: 10px; font-weight: 300; color: var(--accent-color); font-size: 1.1rem; }
+
+        .contact-info { margin-top: 30px; text-align: left; }
         .contact-info p { margin: 10px 0; display: flex; align-items: center; font-size: 0.9rem; }
         .contact-info i { margin-right: 15px; width: 20px; color: var(--accent-color); }
         .contact-info a { color: white; text-decoration: none; }
 
-        .skills-section h3 { border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-top: 40px; }
+        .skills-section { text-align: left; }
+        .skills-section h3 { border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-top: 40px; text-transform: uppercase; font-size: 1rem; }
         .skill-tag { display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 12px; margin: 4px; border-radius: 4px; font-size: 0.85rem; }
 
         /* Main Content Style */
@@ -84,6 +97,8 @@
 
 <div class="container">
     <header>
+        <img src="glider%20deployment34%20(1).jpg" alt="Thomas Morgan - Glider Deployment" class="profile-pic">
+        
         <h1>Thomas<br>Morgan</h1>
         <h2>PhD Researcher | Embodied AI</h2>
 
@@ -115,7 +130,7 @@
     <main>
         <section id="summary">
             <h3>Summary</h3>
-            <p>PhD researcher specializing in data-centric machine learning for embodied AI. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in transforming raw robotic sensor streams into high-quality training datasets for foundation models and self-learning systems.</p>
+            <p>PhD researcher specializing in data-centric machine learning for embodied AI. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in building end-to-end data workflows that transform raw robotic sensor streams into high-quality training datasets for deep learning models.</p>
         </section>
 
         <section id="experience">
@@ -166,7 +181,7 @@
             </div>
             <div class="entry">
                 <p><strong>Quantifying the Impact of Multimodal Sensor Fusion on Autonomous Robotic Perception</strong><br>
-                <small>Conference Submission</small> | <a href="https://tinyurl.com/mr4a6hnk" class="pub-link">View PDF</a></p>
+                <small>Conference Submission</small> | <a href="https://tinyurl.com/mr4a6hkk" class="pub-link">View PDF</a></p>
             </div>
         </section>
 
