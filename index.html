@@ -1,353 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tom Morgan CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Morgan | PhD Researcher in Marine Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f4f7f6;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            background-color: var(--light-bg);
+        }
 
-  <style>
-    /* 1️⃣ Base Styles */
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fdfdfd;
-      color: #222;
-      line-height: 1.7;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-    a {
-      color: #1E90FF;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #1C75BC;
-    }
+        /* Sidebar Style */
+        header {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px;
+        }
 
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1.2rem 2rem;
-      border-bottom: 1px solid #ddd;
-      z-index: 1000;
-    }
+        header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        header h2 { margin-top: 5px; font-weight: 300; color: var(--accent-color); font-size: 1.2rem; }
 
-    nav a {
-      margin-right: 1.5rem;
-      font-weight: 600;
-    }
+        .contact-info { margin-top: 30px; }
+        .contact-info p { margin: 10px 0; display: flex; align-items: center; font-size: 0.9rem; }
+        .contact-info i { margin-right: 15px; width: 20px; color: var(--accent-color); }
+        .contact-info a { color: white; text-decoration: none; }
 
-    /* 2️⃣ Hero Section */
-    .hero {
-      position: relative;
-      background: url('assets/hero-photo.png') center/cover no-repeat;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 1rem;
-    }
+        .skills-section h3 { border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-top: 40px; }
+        .skill-tag { display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 12px; margin: 4px; border-radius: 4px; font-size: 0.85rem; }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.4); /* dark overlay */
-    }
+        /* Main Content Style */
+        main {
+            flex: 2;
+            min-width: 400px;
+            padding: 40px;
+        }
 
-    .hero h1, .hero p, .hero .button {
-      position: relative;
-      z-index: 1;
-    }
+        section { margin-bottom: 30px; }
+        h3 { color: var(--primary-color); border-left: 4px solid var(--accent-color); padding-left: 15px; text-transform: uppercase; font-size: 1.1rem; }
+        
+        .entry { margin-bottom: 25px; }
+        .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .entry-header h4 { margin: 0; color: #333; font-size: 1.1rem; }
+        .date { font-size: 0.85rem; color: #777; font-weight: bold; }
+        .location { font-style: italic; color: #555; margin-bottom: 5px; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; font-size: 0.95rem; }
 
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    }
+        .pub-link { display: inline-block; margin-top: 5px; color: var(--accent-color); text-decoration: none; font-weight: bold; }
+        .pub-link:hover { text-decoration: underline; }
 
-    .hero p {
-      font-size: 1.5rem;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero .button {
-      background-color: #1E90FF;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .hero .button:hover {
-      background-color: #1C75BC;
-    }
-
-    /* 3️⃣ Sections */
-    section {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    .section-header {
-      font-family: 'Montserrat', sans-serif;
-      color: #1E90FF;
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #1E90FF;
-      padding-bottom: 0.25rem;
-    }
-
-    /* 4️⃣ Images */
-    .inline-image {
-      float: left;
-      margin: 0 1.5rem 1rem 0;
-      width: 40%;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-   .inline-image-right {
-        float: right;
-        margin: 0 1.5rem 1rem 0;
-        width: 40%;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      }
-
-    /* Clear floats */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* 5️⃣ Cards for info */
-    .card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-    }
-    .team-grid {
-      display: flex;
-      flex-wrap: wrap;          /* wrap to next line if screen is too small */
-      gap: 2rem;                /* space between team members */
-      justify-content: center;  /* center the row */
-      margin-top: 2rem;
-    }
-    
-    .team-member {
-      flex: 1 1 200px;          /* grow/shrink, base width 200px */
-      max-width: 220px;         /* limit size */
-      text-align: center;
-    }
-    
-    .team-member img {
-      width: 100%;              /* fills container width */
-      height: auto;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 0.5rem;
-    }
-    
-    .team-member h3 {
-      margin: 0.5rem 0 0.25rem;
-      font-size: 1.1rem;
-      color: #1E90FF;
-    }
-    
-    .team-member p {
-      margin: 0.2rem 0;
-      font-size: 0.9rem;
-      color: #444;
-    }
-
-
-    /* 6️⃣ Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-      background: #f7f7f7;
-    }
-    
-
-    /* 7️⃣ Responsive */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1.2rem; }
-      .inline-image { float: none; width: 100%; margin: 0 0 1rem 0; }
-    }
-  </style>
+        @media (max-width: 768px) {
+            .container { margin: 0; border-radius: 0; }
+            header, main { flex: 100%; }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#programme">Programme</a>
-      <a href="#learning">Learning Outcomes</a>
-      <a href="#Attendance">Attendance </a>
-      <a href="#workshop">Workshop </a>
-      <a href="#Signup">Sign up</a>
-      <a href="#team">Team</a>
-      <a href="#acknowledgements">Acknowledgements</a>
-      <a href="#contact">Contact</a>
 
-    </nav>
-  </header>
+<div class="container">
+    <header>
+        <h1>Thomas<br>Morgan</h1>
+        <h2>PhD Researcher | Embodied AI</h2>
 
-<section class="hero">
-  <h1>Bridging the Skills Gap: Computer Vision Training for Marine Ecologists</h1>
-</section>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Oban, UK</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:PhD01tm@sams.ac.uk">PhD01tm@sams.ac.uk</a></p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/sams-tom">sams-tom</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/tom-morgan">Tom Morgan</a></p>
+        </div>
 
-<section id="about" class="content">
-  <h2 class="section-header">About</h2>
+        <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <p><strong>ML:</strong> 
+                <span class="skill-tag">Bayesian NNs</span> <span class="skill-tag">Uncertainty Estimation</span> 
+                <span class="skill-tag">Multimodal Fusion</span> <span class="skill-tag">Attention Mechanisms</span>
+                <span class="skill-tag">Knowledge Distillation</span>
+            </p>
+            <p><strong>Dev & Engineering:</strong> 
+                <span class="skill-tag">Python (Adv)</span> <span class="skill-tag">PyTorch</span> <span class="skill-tag">C++</span> 
+                <span class="skill-tag">HPC Clusters</span> <span class="skill-tag">Linux</span> <span class="skill-tag">Git</span>
+                <span class="skill-tag">PyPI Packaging</span>
+            </p>
+            <p><strong>Robotics:</strong>
+                <span class="skill-tag">Sensor Fusion</span> <span class="skill-tag">Perception</span> <span class="skill-tag">Mapping</span>
+            </p>
+        </div>
+    </header>
 
-  <p>Modern marine ecology, particularly the study of benthic ecosystems, is increasingly driven by the acquisition of large volumes of imagery. From towed camera systems, remotely operated vehicles and autonomous underwater vehicles, underwater imaging systems now capture vast quantities of visual data. However, the interpretation of this imagery is slow, costly, and often inconsistent, creating a fundamental bottleneck that restricts the scale and speed of ecological insight. </p>
+    <main>
+        <section id="summary">
+            <h3>Summary</h3>
+            <p>PhD researcher specializing in data-centric machine learning for embodied AI. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in transforming raw robotic sensor streams into high-quality training datasets for foundation models and self-learning systems.</p>
+        </section>
 
-  <p>Recent advances in computer vision methods can help to clear this bottleneck, assisting with tasks like taxonomic identification, abundance estimates, and habitat mapping. Computer vision methods have the potential to transform how benthic ecosystems are studied, enabling ecologists to work faster, more consistently, and at far greater scales. Despite this promise, many benthic ecologists do not understand the methods underpinning computer vision, lowering confidence in their application. Additionally, marine imagery presents distinct complexities for computer vision, namely the presence of turbidity, variable lighting, and cluttered scenes which cause “off-the-shelf" models to perform poorly. The lack of core computer vision skills and the unique challenges posed by underwater imagery has slowed the marine science community’s ability to adopt, adapt and harness computer vision. This workshop will address these challenges directly. It will equip benthic ecologists, primarily early-career researchers with little programming experience and no prior machine learning background, with the foundational knowledge, skills, and confidence required to integrate computer vision into their research. </p>
+        <section id="experience">
+            <h3>Research & Education</h3>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <h4>PhD Marine Robotics</h4>
+                    <span class="date">Oct 2023 – Present</span>
+                </div>
+                <div class="location">Scottish Association for Marine Science (SAMS) - UHI</div>
+                <ul>
+                    <li><strong>Multimodal Data Pipelines:</strong> Designed Python pipelines for synchronizing vision, sonar, and hyperspectral data.</li>
+                    <li><strong>Data-Centric ML:</strong> Investigated sensor noise and sparsity impacts using uncertainty estimates to diagnose dataset quality.</li>
+                    <li><strong>Representation Learning:</strong> Built PyTorch models using attention mechanisms for robust perception under partial observability.</li>
+                    <li><strong>Generative Modeling:</strong> Developed VAEs to synthesize realistic sensor observations from sparse inputs.</li>
+                    <li><strong>Scalable Infrastructure:</strong> Managed large training runs on HPC clusters with emphasis on reproducibility.</li>
+                </ul>
+            </div>
 
-  <p> <img src="assets/photo1.JPG" alt="Benthic ecosystem example" class="inline-image"> All attendees will leave with reusable code, annotated Python notebooks, and complete workflows that can be easily adapted to their own datasets. The workshop will be delivered by an interdisciplinary team from the University of Cambridge, the British Antarctic Survey, and the Scottish Association for Marine Sciences. 
-</p>
-</section>
+            <div class="entry">
+                <div class="entry-header">
+                    <h4>MSc Data Science</h4>
+                    <span class="date">Graduated 2023</span>
+                </div>
+                <div class="location">University College London (UCL)</div>
+            </div>
 
-<section id="programme" class="content">
-  <h2 class="section-header">Programme</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <h4>BSc Economics & Politics (First Class)</h4>
+                    <span class="date">2018 – 2022</span>
+                </div>
+                <div class="location">University of Exeter</div>
+                <p><small><em>Mathematical Emphasis</em></small></p>
+            </div>
+        </section>
 
-  <p>The workshop will run over two days, hosted in-person at the British Antarctic Survey in Cambridge, 10–11th March 2026, from 10:00 - 17:00 on the 10th and 09:00 - 16:00 on the 11th. Teaching will be delivered through two complementary elements: accessible lectures introducing key concepts, and guided hands-on practicals using a real benthic dataset. </p>
+        <section id="publications">
+            <h3>Publications</h3>
+            <div class="entry">
+                <p><strong>Bayesian Multimodal Fusion for Seafloor Habitat Mapping with Autonomous Underwater Vehicles</strong><br>
+                <small>Submitted to Journal</small> | <a href="https://tinyurl.com/bdhtfva6" class="pub-link">View PDF</a></p>
+            </div>
+            <div class="entry">
+                <p><strong>Uncertainty-Weighted Cross-Modal Knowledge Distillation for Energy-Constrained Robotic Perception</strong><br>
+                <small>Conference Submission</small> | <a href="https://tinyurl.com/437umvvd" class="pub-link">View PDF</a></p>
+            </div>
+            <div class="entry">
+                <p><strong>Quantifying the Impact of Multimodal Sensor Fusion on Autonomous Robotic Perception</strong><br>
+                <small>Conference Submission</small> | <a href="https://tinyurl.com/mr4a6hnk" class="pub-link">View PDF</a></p>
+            </div>
+        </section>
 
-  <p><strong>Day 1 – Foundations</strong><img src="assets/photo2.png" alt="Benthic ecosystem example" class="inline-image-right"></p>
-  <ul>
-    <li><em>Morning lectures:</em> Introduction to computer vision; challenges in marine imagery; effective data labelling.</li>
-    <li><em>Afternoon practical:</em> Building a benthic image dataset.</li>
-    <li><em>Evening:</em> Networking reception and dinner.</li>
-  </ul>
+        <section id="teaching">
+            <h3>Teaching & Leadership</h3>
+            <ul>
+                <li><strong>Workshop Instructor (Cambridge):</strong> Led 2-day hands-on workshop on computer vision workflows, model training, and reproducibility.</li>
+                <li><strong>Tutorial Leader:</strong> Designed lectures/labs for Data Science, Marine Robotics, and Physics (Python focus).</li>
+            </ul>
+        </section>
+    </main>
+</div>
 
-  <p><strong>Day 2 – Applications</strong></p>
-  <ul>
-    <li><em>Morning lectures:</em> Model training, evaluation,  and working with regulatory/industry end-users.</li>
-    <li><em>Afternoon practical:</em> Training and evaluating models using the dataset from Day 1.</li>
-    
-  </ul>
-
-</section>
-
-<section id="learning" class="content">
-   <h2 class="section-header">Learning outcomes </h2>
-   <p>By the end of this workshop participants will be able to:</p>
-<ul class="prose ml-4 list-disc space-y-2">
-  <li>Describe the core concepts underlying modern computer vision (e.g. classification, object detection, segmentation) and how they apply to benthic imagery.</li>
-  <li>Identify when and how computer vision is an appropriate tool for a specific research question.</li>
-  <li>Recognise the distinct challenges of working with marine data (e.g. turbidity, colour distortion) and how they affect computer vision systems.</li>
-  <li>Annotate benthic imagery effectively and understand how labelling types impact model performance.</li>
-  <li>Outline best-practice workflows for computer vision, from dataset preparation and annotation to training and evaluation.</li>
-  <li>Train and assess a computer vision model using open-source, reproducible code.</li>
-  <li>Have the knowledge and resource to apply computer vision to their own marine image analysis problem.</li>
-</ul>
-  </section>
- 
-<section id="Attendance" class="content">
-  <h2 class="section-header">Attendance Information</h2>
-
-  <p><strong>Capacity:</strong> 30 participants.</p>
-  <p><strong>Cost:</strong> Free to attend, with limited funding available to reimburse travel and accommodation for some participants.</p>
-  <p><strong>Eligibility:</strong> Open to any UK based applicants, but all participants must be able to attend in person. </p>
-
- <p><strong>Priority:</strong></p>
-<p>Applications will be assessed based on their answers to the google form below, with priority given in the following order:</p>
-<ul>
-<li>PhD students and Early Career Researchers working in benthic ecology.</li>
-<li>Other PhD/ECR applicants with a broader interest in marine imagery.</li>
-<li>UKRI funding-eligible marine ecologists.</li>
-<li>Applicants working in other UK-based science sectors aligned with UKRI.</li>
-</ul>
-
-  <p>Lunch will be provided on both days, along with a networking dinner on 10 March. Unfortunately, remote or virtual attendance is not available.</p>
-
-  <p><strong>Participants must bring:</strong></p>
-  <ul>
-    <li>Laptop</li>
-    <li>Computer mouse</li>
-  </ul>
-
-</section>
-
-<section id="signup" class="content">
-  <h2 class="section-header">Signup Information</h2>
-<p>To apply, please submit your details using this <a href="https://forms.gle/u7QAv2HZMJHXmass5" target="_blank">Google Form</a> by 5pm UK time on 30/01/2026.</p>
-</section>
-<!-- Team / People Section -->
-<section id="team" class="content">
-  <h2 class="section-header">People Involved</h2>
-
-    <div class="team-grid">
-  
-    <!-- Dr Cameron Trotter -->
-    <div class="team-member">
-      <img src="assets/cameron.jpg" alt="Cameron Trotter">
-      <h3>Dr Cameron Trotter</h3>
-      <p><em>ML Research Scientist</em></p>
-      <p>British Antarctic Survey</p>
-    </div>
-
-    <!-- Tom Morgan -->
-    <div class="team-member">
-      <img src="assets/tom.jpg" alt="Tom Morgan">
-      <h3>Tom Morgan</h3>
-      <p><em>PhD Researcher: Multimodal Machine Learning for Marine Robotics</em></p>
-      <p>Scottish Association for Marine Science</p>
-    </div>
-    <!-- Dr Thomas Wilding -->
-      <div class="team-member">
-        <img src="assets/tom-wilding.jpg" alt="Dr Thomas Wilding">
-        <h3>Dr Thomas Wilding</h3>
-        <p><em>Benthic Ecologist</em></p>
-        <p>Scottish Association for Marine Science</p>
-      </div>
-    <!-- Alejandra Mejía-Saenz -->
-    <div class="team-member">
-      <img src="assets/alejandra.jpg" alt="Alejandra Mejía-Saenz">
-      <h3>Alejandra Mejía-Saenz</h3>
-      <p><em>Deep-Sea Ecologist • PhD Researcher</em></p>
-      <p>Scottish Association for Marine Science</p>
-    </div>
-      
-    <!-- Dr Emily G. Mitchell -->
-    <div class="team-member">
-      <img src="assets/emily.png" alt="Emily Mitchell">
-      <h3>Dr Emily G. Mitchell</h3>
-      <p><em>Assistant Professor</em></p>
-      <p>University of Cambridge</p>
-    </div>
-  </div>
-  
-<!-- Acknowledgements Section -->
-<section id="acknowledgements" class="content">
-  <h2 class="section-header">Acknowledgements</h2>
-  <p>This workshop and research activities are generously funded by the <strong>Accelerate Programme for Scientific Discovery</strong> and the <strong>Cambridge Centre for Data-Driven Discovery (C2D3)</strong>. Their support enables us to bridge the skills gap and provide hands-on training in computer vision for marine ecologists.</p>
-  <p>Details of all funded projects can be found in the <a href="https://bit.ly/4rpvSiy" target="_blank">official announcement</a>.</p>
-</section>
-
-<section id="contact" class="content">
-  <h2 class="section-header">Contact</h2>
-  <p>For any questions, please contact us at <a href="mailto:tom.morgan@sams.ac.uk">tom.morgan@sams.ac.uk</a></p>
-</section>
-  <footer>
-    <p>© 2025 Tom Morgan</p>
-  </footer>
 </body>
 </html>
