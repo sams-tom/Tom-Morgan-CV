@@ -110,26 +110,27 @@
         <h2>PhD Researcher | Embodied AI</h2>
 
         <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> Oban, UK</p>
+            <p><i class="fas fa-map-marker-alt"></i>Scottish Association of Marine Science, Oban, UK</p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:PhD01tm@sams.ac.uk">PhD01tm@sams.ac.uk</a></p>
             <p><i class="fab fa-github"></i> <a href="https://github.com/sams-tom">sams-tom</a></p>
-            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/tom-morgan">Tom Morgan</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tom-morgan-8a73b129b/">Tom Morgan</a></p>
         </div>
 
         <div class="skills-section">
             <h3>Technical Skills</h3>
             <p><strong>ML:</strong> 
-                <span class="skill-tag">Bayesian NNs</span> <span class="skill-tag">Uncertainty Estimation</span> 
-                <span class="skill-tag">Multimodal Fusion</span> <span class="skill-tag">Attention Mechanisms</span>
-                <span class="skill-tag">Knowledge Distillation</span>
+                <span class="skill-tag">Robotics ML</span><span class="skill-tag">Computer Vision</span> <span class="skill-tag">Uncertainty Estimation</span> 
+                <span class="skill-tag">Multimodal Fusion</span> <span class="skill-tag">Edge AI</span>
+                <span class="skill-tag">Knowledge Distillation</span><span class="skill-tag">Computer Vision</span>
             </p>
             <p><strong>Dev & Engineering:</strong> 
-                <span class="skill-tag">Python (Adv)</span> <span class="skill-tag">PyTorch</span> <span class="skill-tag">C++</span> 
+                <span class="skill-tag">Python (Adv)</span> <span class="skill-tag">PyTorch</span> 
                 <span class="skill-tag">HPC Clusters</span> <span class="skill-tag">Linux</span> <span class="skill-tag">Git</span>
                 <span class="skill-tag">PyPI Packaging</span>
             </p>
             <p><strong>Robotics:</strong>
-                <span class="skill-tag">Sensor Fusion</span> <span class="skill-tag">Perception</span> <span class="skill-tag">Mapping</span>
+                <span class="skill-tag">Sensor Fusion</span> <span class="skill-tag">Perception</span> <span class="skill-tag">Mapping</span> 
+                <span class="skill-tag">Kalman Filters</span><span class="skill-tag">Path planning</span>
             </p>
         </div>
     </header>
@@ -137,7 +138,7 @@
     <main>
         <section id="summary">
             <h3>Summary</h3>
-            <p>PhD researcher specializing in data-centric machine learning for embodied AI. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in building end-to-end data workflows that transform raw robotic sensor streams into high-quality training datasets for deep learning models.</p>
+            <p>PhD researcher specialising in data-centric machine learning for embodied AI. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in building end-to-end data workflows that transform raw robotic sensor streams into actional insights using deep learning models.</p>
         </section>
 
         <section id="experience">
@@ -150,18 +151,18 @@
                 </div>
                 <div class="location">Scottish Association for Marine Science (SAMS) - UHI</div>
                 <ul>
-                    <li><strong>Multimodal Data Pipelines:</strong> Designed Python pipelines for synchronizing vision, sonar, and hyperspectral data.</li>
-                    <li><strong>Data-Centric ML:</strong> Investigated sensor noise and sparsity impacts using uncertainty estimates to diagnose dataset quality.</li>
-                    <li><strong>Representation Learning:</strong> Built PyTorch models using attention mechanisms for robust perception under partial observability.</li>
-                    <li><strong>Generative Modeling:</strong> Developed VAEs to synthesize realistic sensor observations from sparse inputs.</li>
-                    <li><strong>Scalable Infrastructure:</strong> Managed large training runs on HPC clusters with emphasis on reproducibility.</li>
+                    <li><strong>Uncertainty-Aware Multimodal Fusion:</strong> Developed Bayesian Neural Networks to fuse optical, bathymetric, and side-scan sonar data. Engineered the system to quantify <em>aleatoric</em> and <em>epistemic</em> uncertainty, improving classification accuracy by 8% over unimodal baselines and enabling real-time deployment on onboard GPUs.</li>
+                    <li><strong>Cross-Modal Knowledge Distillation:</strong> Designed a framework to transfer high-fidelity perception from a "rich" multimodal teacher to an energy-efficient "unimodal" student. Achieved a 5.2% accuracy boost for sonar-only systems, enabling robust perception on resource-constrained robotic platforms.</li>
+                    <li><strong>Explainable AI for Autonomy:</strong> Integrated SHapley Additive exPlanations (SHAP) and Random Forests to map model uncertainty to AUV metadata (depth, illumination, navigation). This created a "data-driven" pilot feedback loop for safer autonomous survey planning.</li>
+                    <li><strong>Robustness & Physics-Informed Simulation:</strong> Quantified the limits of underwater vision by simulating optical degradation. Demonstrated that multimodal fusion maintains 76% accuracy in turbid conditions where unimodal vision models collapse (dropping to 29%).</li>
+                    <li><strong>Open Source Contribution:</strong> Developed and released the <code>multimodal-AUV</code> library, providing the research community with reproducible codebases and pre-trained models for seabed habitat mapping.</li>
                 </ul>
             </div>
 
             <div class="entry">
                 <div class="entry-header">
-                    <h4>MSc Data Science</h4>
-                    <span class="date">Graduated 2023</span>
+                    <h4>MSc Data Science (Merit)</h4>
+                    <span class="date">2022 - 2023</span>
                 </div>
                 <div class="location">University College London (UCL)</div>
             </div>
@@ -188,15 +189,22 @@
             </div>
             <div class="entry">
                 <p><strong>Quantifying the Impact of Multimodal Sensor Fusion on Autonomous Robotic Perception</strong><br>
-                <small>Conference Submission</small> | <a href="https://tinyurl.com/mr4a6hkk" class="pub-link">View PDF</a></p>
+                <small>Conference Submission</small> | <a href="https://tinyurl.com/3fuk5hbm" class="pub-link">View PDF</a></p>
             </div>
         </section>
 
         <section id="teaching">
             <h3>Teaching & Leadership</h3>
             <ul>
-                <li><strong>Workshop Instructor (Cambridge):</strong> Led 2-day hands-on workshop on computer vision workflows, model training, and reproducibility.</li>
+                <li><strong>Workshop Instructor (Cambridge):</strong> Co-led 2-day hands-on workshop on computer vision workflows, model training, and reproducibility.</li>
                 <li><strong>Tutorial Leader:</strong> Designed lectures/labs for Data Science, Marine Robotics, and Physics (Python focus).</li>
+            </ul>
+        </section>
+        <section id="Grants">
+            <h3>Grants</h3>
+            <ul>
+                <li><strong>Bridging the skills gap: Computer vision for benthic ecologists:</strong> Co-led a successful application for £15,000 to run a workshop on computer vision at Cambridge</li><a href="https://sams-tom.github.io/marine-workshop-site/" class="pub-link">View PDF</a></p>
+                <li><strong>NERC AI grant:</strong> Co-applied (junior) for the NERC AI grant (ONGOING)</li>
             </ul>
         </section>
     </main>
