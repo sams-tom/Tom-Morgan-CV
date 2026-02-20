@@ -73,15 +73,38 @@
         }
 
         section { margin-bottom: 30px; }
-        header h3 { 
-            color: white !important; 
-            border-bottom: 2px solid var(--accent-color); 
-            padding-bottom: 5px; 
-            margin-top: 40px; 
-            text-transform: uppercase; 
-            font-size: 1rem; 
+        main h3 { 
+            color: #2471a3; /* Ocean Blue */
+            font-size: 1.5rem; 
+            border-left: 5px solid #3498db; 
+            padding-left: 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
+        /* Job/Degree Titles (PhD Marine Robotics, etc.) */
+        main h4 {
+            color: #2c3e50; /* Darker Slate */
+            font-size: 1.25rem;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+        
+        /* Make sure the Summary text doesn't look too small next to the new big headings */
+        #summary p {
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        /* Fix for your Sidebar Skills heading (Keep it white) */
+        .skills-section h3 {
+            color: white !important;
+            border-bottom: 2px solid var(--accent-color);
+            border-left: none; /* Remove the blue line from sidebar headings */
+            padding-left: 0;
+            font-size: 1.1rem;
+        }
         .entry { margin-bottom: 25px; }
         .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
         .entry-header h4 { margin: 0; color: #333; font-size: 1.1rem; }
@@ -107,7 +130,7 @@
         <img src="glider%20deployment34%20(1).jpg" alt="Thomas Morgan - Glider Deployment" class="profile-pic">
         
         <h1>Thomas<br>Morgan</h1>
-        <h2>PhD Researcher | Embodied AI</h2>
+        <h2>PhD Researcher | Robotics & AI</h2>
 
         <div class="contact-info">
             <p><i class="fas fa-map-marker-alt"></i>Scottish Association of Marine Science, Oban, UK</p>
@@ -146,7 +169,7 @@
             
             <div class="entry">
                 <div class="entry-header">
-                    <h4>PhD Marine Robotics</h4>
+                    <h4>PhD Marine Robotics and AI</h4>
                     <span class="date">Oct 2023 – Present</span>
                 </div>
                 <div class="location">Scottish Association for Marine Science (SAMS) - UHI</div>
@@ -200,11 +223,17 @@
                 <li><strong>Tutorial Leader:</strong> Designed lectures/labs for Data Science, Marine Robotics, and Physics (Python focus).</li>
             </ul>
         </section>
-        <section id="Grants">
-            <h3>Grants</h3>
+       <section id="Grants">
+            <h3>Grants & Awards</h3>
             <ul>
-                <li><strong>Bridging the skills gap: Computer vision for benthic ecologists:</strong> Co-led a successful application for £15,000 to run a workshop on computer vision at Cambridge</li><a href="https://sams-tom.github.io/marine-workshop-site/" class="pub-link">View project</a></p>
-                <li><strong>NERC AI grant:</strong> Co-applied (junior) for the NERC AI grant (ONGOING)</li>
+                <li>
+                    <strong>Bridging the skills gap: Computer vision for benthic ecologists:</strong> 
+                    Co-led successful application for £15,000 to deliver a workshop at the University of Cambridge.
+                    <br><a href="https://sams-tom.github.io/marine-workshop-site/" class="pub-link">View project</a>
+                </li>
+                <li>
+                    <strong>NERC AI grant:</strong> Co-applied (junior) for the NERC AI grant (Ongoing).
+                </li>
             </ul>
         </section>
     </main>
