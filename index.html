@@ -11,7 +11,6 @@
             --accent-color: #3498db;
             --text-color: #333;
             --light-bg: #f4f7f6;
-            --sidebar-width: 340px;
         }
 
         body {
@@ -22,108 +21,74 @@
             background-color: var(--light-bg);
         }
 
-        /* Container: Uses Flex but switches to Block on mobile */
         .container {
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 40px auto;
             background: white;
             display: flex;
-            min-height: 100vh;
+            flex-direction: row; /* Default desktop */
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        /* Sidebar Styling */
+        /* Sidebar */
         header {
-            flex: 0 0 var(--sidebar-width);
+            flex: 0 0 320px;
             background-color: var(--primary-color);
             color: white;
             padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
+            text-align: center;
         }
 
         .profile-pic {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid var(--accent-color);
-            margin: 0 auto 20px auto;
-            display: block;
+            margin-bottom: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        header h1 { 
-            margin: 0; 
-            font-size: 1.8rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            line-height: 1.2; 
-            text-align: center;
-        }
+        header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1.1; }
+        header h2 { margin-top: 10px; font-weight: 300; color: var(--accent-color); font-size: 1.1rem; }
 
-        header h2 { 
-            margin-top: 10px; 
-            font-weight: 300; 
-            color: var(--accent-color); 
-            font-size: 1rem; 
-            text-align: center;
-        }
+        .contact-info { margin-top: 30px; text-align: left; }
+        .contact-info p { margin: 12px 0; display: flex; align-items: center; font-size: 0.9rem; }
+        .contact-info i { margin-right: 15px; width: 20px; color: var(--accent-color); text-align: center; }
+        .contact-info a { color: white; text-decoration: none; word-break: break-all; }
 
-        /* Contact Info: Better spacing for touch */
-        .contact-info { margin-top: 30px; }
-        .contact-info p { 
-            margin: 15px 0; 
-            display: flex; 
-            align-items: center; 
-            font-size: 0.9rem; 
-        }
-        .contact-info i { 
-            margin-right: 12px; 
-            width: 20px; 
-            color: var(--accent-color); 
-            text-align: center;
-        }
-        .contact-info a { 
-            color: white; 
-            text-decoration: none; 
-            word-break: break-all; /* Prevents long emails from breaking layout */
-        }
-
-        /* Skills Section */
+        .skills-section { text-align: left; }
         .skills-section h3 { 
             border-bottom: 2px solid var(--accent-color); 
             padding-bottom: 5px; 
-            margin-top: 30px; 
+            margin-top: 40px; 
             text-transform: uppercase; 
-            font-size: 0.95rem; 
-            color: white;
+            font-size: 1rem; 
+            color: white !important;
         }
         
-        .skill-group { margin-bottom: 15px; }
-        .skill-group strong { display: block; margin-bottom: 5px; font-size: 0.85rem; color: #bdc3c7; }
-
         .skill-tag { 
             display: inline-block; 
             background: rgba(255,255,255,0.1); 
-            padding: 4px 10px; 
-            margin: 3px; 
+            padding: 5px 12px; 
+            margin: 4px; 
             border-radius: 4px; 
-            font-size: 0.8rem; 
+            font-size: 0.85rem; 
         }
 
         /* Main Content */
         main {
             flex: 1;
-            padding: 40px 50px;
-            background: white;
+            padding: 40px;
+            min-width: 0; /* Prevents flex items from overflowing */
         }
 
-        section { margin-bottom: 40px; }
-        
+        section { margin-bottom: 35px; }
         main h3 { 
             color: #2471a3; 
-            font-size: 1.4rem; 
+            font-size: 1.5rem; 
             border-left: 5px solid #3498db; 
             padding-left: 15px;
             margin-bottom: 20px;
@@ -131,73 +96,57 @@
             letter-spacing: 1px;
         }
 
-        .entry { margin-bottom: 30px; }
+        main h4 { color: #2c3e50; font-size: 1.25rem; margin-bottom: 2px; font-weight: 700; }
+        
+        .entry { margin-bottom: 25px; }
         .entry-header { 
             display: flex; 
             justify-content: space-between; 
             align-items: baseline; 
-            flex-wrap: wrap; /* Allows date to drop below title on small screens */
-            gap: 5px;
+            flex-wrap: wrap; 
         }
-
-        .entry-header h4 { margin: 0; color: #2c3e50; font-size: 1.15rem; flex: 1; min-width: 250px; }
-        .date { font-size: 0.85rem; color: #777; font-weight: bold; white-space: nowrap; }
-        .location { font-style: italic; color: #555; margin: 2px 0 8px 0; font-size: 0.95rem; }
         
-        ul { padding-left: 18px; margin-top: 10px; }
-        li { margin-bottom: 10px; font-size: 0.95rem; color: #444; }
+        .date { font-size: 0.85rem; color: #777; font-weight: bold; }
+        .location { font-style: italic; color: #555; margin-bottom: 5px; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; font-size: 0.95rem; }
 
-        .pub-link { 
-            display: inline-flex; 
-            align-items: center;
-            margin-top: 8px; 
-            color: var(--accent-color); 
-            text-decoration: none; 
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
+        .pub-link { display: inline-block; margin-top: 5px; color: var(--accent-color); text-decoration: none; font-weight: bold; }
         .pub-link:hover { text-decoration: underline; }
 
-        /* --- MOBILE OPTIMIZATIONS --- */
+        /* --- MOBILE OPTIMIZATION OVERRIDES --- */
         @media (max-width: 850px) {
-            .container { 
-                flex-direction: column; 
-                margin: 0; 
-                box-shadow: none;
-            }
-            
-            header { 
-                flex: none; 
-                width: 100%; 
-                padding: 40px 20px;
-                box-sizing: border-box;
+            .container {
+                margin: 0;
+                flex-direction: column;
+                border-radius: 0;
             }
 
-            main { 
-                padding: 30px 20px; 
+            header {
+                flex: none;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 30px 20px;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+
+            .date {
+                margin-top: 4px;
+                margin-bottom: 8px;
             }
 
             .profile-pic {
-                width: 130px;
-                height: 130px;
+                width: 140px;
+                height: 140px;
             }
-
-            header h1 { font-size: 1.6rem; }
-            
-            .entry-header h4 { font-size: 1.1rem; }
-            
-            /* Skill tags slightly larger for easier tapping if they were links */
-            .skill-tag {
-                padding: 6px 12px;
-            }
-        }
-
-        /* Print optimization */
-        @media print {
-            .container { box-shadow: none; display: block; }
-            header { background: white; color: black; border-bottom: 2px solid #eee; }
-            .skill-tag { border: 1px solid #ccc; color: black; }
-            .contact-info i { color: black; }
         }
     </style>
 </head>
@@ -211,7 +160,7 @@
         <h2>PhD Researcher | Robotics & AI</h2>
 
         <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> SAMS, Oban, UK</p>
+            <p><i class="fas fa-map-marker-alt"></i>SAMS, Oban, UK</p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:PhD01tm@sams.ac.uk">PhD01tm@sams.ac.uk</a></p>
             <p><i class="fab fa-github"></i> <a href="https://github.com/sams-tom">sams-tom</a></p>
             <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tom-morgan-8a73b129b/">Tom Morgan</a></p>
@@ -219,39 +168,27 @@
 
         <div class="skills-section">
             <h3>Technical Skills</h3>
-            <div class="skill-group">
-                <strong>ML & AI</strong>
-                <span class="skill-tag">Robotics ML</span>
-                <span class="skill-tag">Computer Vision</span> 
-                <span class="skill-tag">Uncertainty Estimation</span> 
-                <span class="skill-tag">Multimodal Fusion</span> 
-                <span class="skill-tag">Edge AI</span>
+            <p><strong>ML:</strong> 
+                <span class="skill-tag">Robotics ML</span><span class="skill-tag">Computer Vision</span> <span class="skill-tag">Uncertainty Estimation</span> 
+                <span class="skill-tag">Multimodal Fusion</span> <span class="skill-tag">Edge AI</span>
                 <span class="skill-tag">Knowledge Distillation</span>
-            </div>
-            <div class="skill-group">
-                <strong>Engineering</strong>
-                <span class="skill-tag">Python (Adv)</span> 
-                <span class="skill-tag">PyTorch</span> 
-                <span class="skill-tag">HPC Clusters</span> 
-                <span class="skill-tag">Linux</span> 
-                <span class="skill-tag">Git</span>
+            </p>
+            <p><strong>Dev & Engineering:</strong> 
+                <span class="skill-tag">Python (Adv)</span> <span class="skill-tag">PyTorch</span> 
+                <span class="skill-tag">HPC Clusters</span> <span class="skill-tag">Linux</span> <span class="skill-tag">Git</span>
                 <span class="skill-tag">PyPI Packaging</span>
-            </div>
-            <div class="skill-group">
-                <strong>Robotics</strong>
-                <span class="skill-tag">Sensor Fusion</span> 
-                <span class="skill-tag">Perception</span> 
-                <span class="skill-tag">Mapping</span> 
-                <span class="skill-tag">Kalman Filters</span>
-                <span class="skill-tag">Path planning</span>
-            </div>
+            </p>
+            <p><strong>Robotics:</strong>
+                <span class="skill-tag">Sensor Fusion</span> <span class="skill-tag">Perception</span> <span class="skill-tag">Mapping</span> 
+                <span class="skill-tag">Kalman Filters</span><span class="skill-tag">Path planning</span>
+            </p>
         </div>
     </header>
 
     <main>
         <section id="summary">
             <h3>Summary</h3>
-            <p>PhD researcher specialising in data-centric machine learning for robotics. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in building end-to-end pipelines that transform raw robotic sensor streams into actionable insights using deep learning models.</p>
+            <p>PhD researcher specialising in data-centric machine learning for robotics. Focus on large-scale multimodal sensor data, uncertainty-aware perception, and scalable ML pipelines. Experienced in building end-to-end pipelines that transform raw robotic sensor streams into actional insights using deep learning models.</p>
         </section>
 
         <section id="experience">
@@ -264,11 +201,11 @@
                 </div>
                 <div class="location">Scottish Association for Marine Science (SAMS) - UHI</div>
                 <ul>
-                    <li><strong>Uncertainty-Aware Multimodal Fusion:</strong> Developed Bayesian Neural Networks to fuse optical and sonar data, improving classification accuracy by 8%.</li>
-                    <li><strong>Cross-Modal Knowledge Distillation:</strong> Designed teacher-student frameworks for energy-efficient perception on resource-constrained platforms.</li>
-                    <li><strong>Explainable AI:</strong> Integrated SHAP and Random Forests to create a data-driven pilot feedback loop for autonomous survey planning.</li>
-                    <li><strong>Robustness:</strong> Demonstrated that multimodal fusion maintains 76% accuracy in turbid conditions where unimodal models fail.</li>
-                    <li><strong>Open Source:</strong> Released the <code>multimodal-AUV</code> library for reproducible seabed habitat mapping.</li>
+                    <li><strong>Uncertainty-Aware Multimodal Fusion:</strong> Developed Bayesian Neural Networks to fuse optical, bathymetric, and side-scan sonar data. Engineered the system to quantify <em>aleatoric</em> and <em>epistemic</em> uncertainty, improving classification accuracy by 8% over unimodal baselines and enabling real-time deployment on onboard GPUs.</li>
+                    <li><strong>Cross-Modal Knowledge Distillation:</strong> Designed a framework to transfer high-fidelity perception from a "rich" multimodal teacher to an energy-efficient "unimodal" student. Achieved a 5.2% accuracy boost for sonar-only systems, enabling robust perception on resource-constrained robotic platforms.</li>
+                    <li><strong>Explainable AI for Autonomy:</strong> Integrated SHapley Additive exPlanations (SHAP) and Random Forests to map model uncertainty to AUV metadata (depth, illumination, navigation). This created a "data-driven" pilot feedback loop for safer autonomous survey planning.</li>
+                    <li><strong>Robustness & Physics-Informed Simulation:</strong> Quantified the limits of underwater vision by simulating optical degradation. Demonstrated that multimodal fusion maintains 76% accuracy in turbid conditions where unimodal vision models collapse (dropping to 29%).</li>
+                    <li><strong>Open Source Contribution:</strong> Developed and released the <code>multimodal-AUV</code> library, providing the research community with reproducible codebases and pre-trained models for seabed habitat mapping.</li>
                 </ul>
             </div>
 
@@ -282,34 +219,48 @@
 
             <div class="entry">
                 <div class="entry-header">
-                    <h4>BSc Economics & Politics (First)</h4>
+                    <h4>BSc Economics & Politics (First Class)</h4>
                     <span class="date">2018 – 2022</span>
                 </div>
                 <div class="location">University of Exeter</div>
+                <p><small><em>Mathematical Emphasis</em></small></p>
             </div>
         </section>
 
         <section id="publications">
             <h3>Publications</h3>
             <div class="entry">
-                <p><strong>Bayesian Multimodal Fusion for Seafloor Habitat Mapping...</strong><br>
-                <small>Under revisions for journal acceptance</small><br>
-                <a href="https://tinyurl.com/bdhtfva6" class="pub-link"><i class="fas fa-file-pdf"></i>&nbsp; View PDF</a></p>
+                <p><strong>Bayesian Multimodal Fusion for Seafloor Habitat Mapping with Autonomous Underwater Vehicles</strong><br>
+                <small>Under revisions for journal acceptance</small> | <a href="https://tinyurl.com/bdhtfva6" class="pub-link">View PDF</a></p>
             </div>
             <div class="entry">
-                <p><strong>Uncertainty-Weighted Cross-Modal Knowledge Distillation...</strong><br>
-                <small>Under preparation</small><br>
-                <a href="https://tinyurl.com/437umvvd" class="pub-link"><i class="fas fa-file-pdf"></i>&nbsp; View PDF</a></p>
+                <p><strong>Uncertainty-Weighted Cross-Modal Knowledge Distillation for Energy-Constrained Robotic Perception</strong><br>
+                <small>Under preparation </small> | <a href="https://tinyurl.com/437umvvd" class="pub-link">View PDF</a></p>
+            </div>
+            <div class="entry">
+                <p><strong>Quantifying the Impact of Multimodal Sensor Fusion on Autonomous Robotic Perception</strong><br>
+                <small>Conference Submission</small> | <a href="https://tinyurl.com/3fuk5hbm" class="pub-link">View PDF</a></p>
             </div>
         </section>
 
-        <section id="grants">
+        <section id="teaching">
+            <h3>Teaching & Leadership</h3>
+            <ul>
+                <li><strong>Workshop Instructor (Cambridge):</strong> Co-led 2-day hands-on workshop on computer vision workflows, model training, and reproducibility.</li>
+                <li><strong>Tutorial Leader:</strong> Designed lectures/labs for Data Science, Marine Robotics, and Physics (Python focus).</li>
+            </ul>
+        </section>
+
+        <section id="Grants">
             <h3>Grants & Awards</h3>
             <ul>
                 <li>
                     <strong>Bridging the skills gap: Computer vision for benthic ecologists:</strong> 
                     Co-led successful application for £15,000 to deliver a workshop at the University of Cambridge.
-                    <br><a href="https://sams-tom.github.io/marine-workshop-site/" class="pub-link"><i class="fas fa-external-link-alt"></i>&nbsp; View Project</a>
+                    <br><a href="https://sams-tom.github.io/marine-workshop-site/" class="pub-link">View project</a>
+                </li>
+                <li>
+                    <strong>NERC AI grant:</strong> Co-applied (junior) for the NERC AI grant (Ongoing).
                 </li>
             </ul>
         </section>
